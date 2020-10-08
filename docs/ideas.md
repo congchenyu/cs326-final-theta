@@ -3,7 +3,9 @@ Team name：Theta
 Application name ：UMass Second-Hand Trading Platform
 
 Team Overview: Chenyu Cong     GitHub username：congchenyu
-			 Shiyan Yin		GitHub username： shiy-cloud
+			
+			
+	       Shiyan Yin      GitHub username： shiy-cloud
 
 Innovative Idea: 
 Our project idea is to create a second-hand trading platform on campus, where students can post the second-hand items they don’t use on the platform and buy what they need. 
