@@ -3,8 +3,6 @@ Team name：Theta
 Application name ：UMass Second-Hand Trading Platform
 
 Team Overview: Chenyu Cong     GitHub username：congchenyu
-			
-			
 	       Shiyan Yin      GitHub username： shiy-cloud
 
 Innovative Idea: 
