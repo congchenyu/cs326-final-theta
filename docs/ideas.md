@@ -19,6 +19,6 @@ Comments
 Using this web application, customers can log in and log out their accounts, comment on the things they want, post things which they want to sell. You can post the description, such as the condition of the item(1. New 2. Almost new 3. Use several times 4. Use many times ), and also the price of the item. We can enter the item name which we want to buy in the Search frame, and get the item whose status is selling.
 
 
-![image] (https://github.com/congchenyu/cs326-final-theta/blob/main/docs/wireframes.png)
+![ Image ] (https://github.com/congchenyu/cs326-final-theta/blob/main/docs/wireframes.png)
 
 
