@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap 4 Website Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <style>
+    body {
+      background-color: lightgrey;
+    }
+  </style>
+</head>
+
+<body>
+    <center>
+        <div class="text contain">
+    <div class="container">
+    <img src="https://image.shutterstock.com/image-photo/chlumcany-czech-republic-march-27-260nw-283167884.jpg" class="img-thumbnail" alt="Cinque Terre" style="width: 5cm;height: 4cm;">
+</div>
+    <br/>
+   
+    <div class="form-group has-feedback">
+       Product Name: &nbsp;
+        <input type="name" id="name" placeholder="please enter the product name" size="30">
+        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+    
+		<tr>   <td>Classify:</td>  
+		<tr> <td>   <select name="classify" >     
+		<option value="book" selected="selected">Book</option>    
+		<option value="Electronic Product">Electronic Product</option> 
+		<option value="Clothes">Clothes</option> 
+		<option value="Furniture">Furniture</option> 
+		<option value="other" >Other</option>    
+		
+		</select>   </td>  </tr> 
+	</div>
+ 
+      <div class="form-group has-feedback">
+        Product Details: 
+         <input type="detail" id="detail" placeholder="please enter the product details" style="width:400px; height:150px;">
+         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+      
+		</div>
+       <div class="form-group has-feedback">
+       Price: 
+		  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <input type="price" id="price" placeholder="please enter the product price" size="30">
+         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+       </div>
+    <div> 
+	<tr>   <td>Trading Address:</td>  &nbsp;&nbsp; 
+	
+	   <select name="adress" >     
+		<option value="address" selected="selected">Dubois Library</option>    
+		<option value="address">IsernBurg</option> 
+		<option value="address">Worcestor</option> 
+		<option value="address">Blue Wall</option> 
+		<option value="address" >SouthWest Residential Area Bus Stop</option>    
+		
+	</select> 
+</div>
+		  <br/>
+	
+		<div class="form-group has-feedback">
+       Cellphone Number:
+         <input type="detail" id="detail" placeholder="please enter your cellphone number " size="40">
+         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+      
+        </div>
+       
+            <button type="button" class="btn btn-primary " >
+               Submit
+              </button>
+    </div>
+</center>
+	
+</body>
+</html>    
