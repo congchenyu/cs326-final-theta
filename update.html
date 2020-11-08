@@ -16,7 +16,7 @@
   </style>
 </head>
 
-<body>
+<body onload="init () ">
   <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #881C1C;">
     <a class="navbar-brand" href=" ">UMass Second-Hand Trading Platform</a>
 
@@ -70,7 +70,7 @@
       </div>
       <div class="form-group has-feedback">
         Image Url:
-        <input id="image" placeholder="please enter the image url" style="width:400px;">
+        <input id="img" placeholder="please enter the image url" style="width:400px;">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
 
       </div>
@@ -79,11 +79,11 @@
           <td>Status:</td>
         <tr>
           <td> <select id="status" name="classify">
-              <option value="Status" selected="selected">New</option>
-              <option value="Status ">Almost new</option>
-              <option value="Status">Use several times</option>
-              <option value="Status">Use a lot times but still work</option>
-              <option value="Status">Outmoded</option>
+              <option value="New" selected="selected">New</option>
+              <option value="Almost new ">Almost new</option>
+              <option value="Use several times">Use several times</option>
+              <option value="Use a lot times but still work">Use a lot times but still work</option>
+              <option value="Outmoded">Outmoded</option>
             </select> </td>
         </tr>
       </div>
@@ -99,11 +99,11 @@
           <td>Trading Address:</td> &nbsp;&nbsp;
 
           <select name="adress">
-            <option value="address" selected="selected">Dubois Library</option>
-            <option value="address">IsernBurg</option>
-            <option value="address">Worcestor</option>
-            <option value="address">Blue Wall</option>
-            <option value="address">SouthWest Residential Area Bus Stop</option>
+            <option value="Dubois Library" selected="selected">Dubois Library</option>
+            <option value="IsernBurg">IsernBurg</option>
+            <option value="Worcestor">Worcestor</option>
+            <option value="Blue Wall">Blue Wall</option>
+            <option value="SouthWest Residential Area Bus Stop">SouthWest Residential Area Bus Stop</option>
 
           </select>
       </div>
@@ -116,12 +116,12 @@
 
       </div>
 
-      <button type="button" onclick="create()" class="btn btn-primary ">
-        Submit
+      <button type="button" onclick="update()" class="btn btn-primary ">
+        Update
       </button>
     </div>
   </center>
-  <script src="post.js"></script>
+  <script src="update.js"></script>
 </body>
 
 </html>
