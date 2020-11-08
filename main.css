@@ -1,0 +1,17 @@
+.card{
+    margin: 10px;
+    border: none;
+    width: 250px;
+}
+
+.container{
+    margin-top: 20px;
+}
+
+#products{
+    margin: 0 auto;
+}
+
+.card-title{
+    font-size: small;
+}
