@@ -10,6 +10,15 @@
 
 URL of Heroku Application ：https://umass-second-hand.herokuapp.com/
 
+Breakdown of the division of labor: 
+Main Chenyu
+Sign In Shiyan,Chenyu
+Sign Up Chenyu
+Details Shiyan
+Post Shiyan
+Update Shiyan
+Server Chenyu
+
 ![image](https://github.com/congchenyu/cs326-final-theta/blob/main/docs/1.png)
 
 The image is a detail website, buyit! function is delete dunction, when click buy it, the product will be deleted cause it is sold out.
