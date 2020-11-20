@@ -5,29 +5,24 @@ function getValue (id) {
 
 async function signup (event) {
     event.preventDefault();
-    console.log(event)
     const email = getValue("email");
     const password = getValue("password");
 
-    const response = await fetch('/api/signin', {
+    const response = await fetch('/api/signup', {
         method: "POST",
         body: JSON.stringify({
-            email,
+            username: email,
             password
         }),
         headers: {
             'Content-Type': 'application/json'
         },
     })
-    if (!response.ok) {
-        alert("Failed");
-        return;
-    }
     res = (await response.json());
-    if (res.success) {
-        alert("success");
-        window.location.href = "/signin.html"
+    if (res.status === 0) {
+        alert('register successfully!');
+    } else {
+        alert(res.msg);
     }
-
 
 }
