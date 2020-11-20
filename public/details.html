@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap 4 Website Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="details.css">
+</head>
+
+
+<body onload="init ()">
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #881C1C;">
+    <a class="navbar-brand" href=" ">UMass Second-Hand Trading Platform</a>
+
+    <ul class="navbar-nav mr-auto">
+        <div class="nav-item active">
+            <a class="nav-link" href="/main.html">Home <span class="sr-only">(current)</span></a></div>
+    </ul>
+
+    <div class="nav-item active">
+        <a class="nav-link" href="/signin.html">Sign In</a>
+    </div>
+
+    <div class="nav-item active">
+        <a class="nav-link" href="/signup.html">Sign Up</a>
+    </div>
+
+</nav>
+
+  <div>Post at May 1st 12:00 pm</div>
+
+  <center>
+    <div class="first"><img id="img"
+        src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/4364b81e-2431-45f4-83d9-8fd314009b9a/apple-watch-series-5-gps-cellular-with-nike-sport-band-44mm-silver-aluminum-case-pcw3R0.jpg"
+        style="width: 7cm; height: 11cm;"> </div>
+  </center>
+  <div class="second" background="white">
+    <h3 id="name">Apple Watch 3rd Version</h3>
+    <br />
+    <p>
+      <font size="4" color="grey">Price: &nbsp; <font color="red" size="5" id="price">$1099</font>
+    </p>
+    <br />
+    <p>
+      <font size="4" color="grey">Trading Address: &nbsp; <font color="black" size="4" id="address">Blue Wall</font>
+    </p>
+    <br />
+    <p>
+      <font size="4" color="grey">Status: &nbsp; <font color="black" size="4" id="status">New</font>
+    </p>
+    <br />
+    <p>
+      <font size="4" color="grey">Contact Approach:
+    </p>
+    <p>
+      <font size="3" color="black">cellphone number:<span id="phone">41399999</span>
+    </p>
+    <br />
+    <center>
+      <div>
+        <button type="button" onclick="buy()" class="btn btn-primary ">
+          Buy it!
+        </button>
+        <button type="button" onclick="update()" class="btn btn-primary ">
+          Update
+        </button>
+      </div>
+    </center>
+  </div>
+  <script src="/details.js"></script>
+</body>
+
+</html>
