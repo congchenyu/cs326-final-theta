@@ -2,6 +2,14 @@ function setNodeContent (id, text) {
     document.getElementById(id).value = text;
 }
 
+function getValue(id) {
+    return document.getElementById(id).value;
+}
+
+function setSrc(id, src) {
+    document.getElementById(id).src = src;
+}
+
 async function init () {
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get('id');
@@ -9,12 +17,13 @@ async function init () {
     if (!response.ok)
         return;
     const details = (await response.json()).data;
-    console.log(details);
     setNodeContent("img", details.img)
     setNodeContent("name", details.name);
     setNodeContent("price", details.price);
     setNodeContent("detail", details.detail);
-    // setNodeContent("address", details.address);
+    setNodeContent("classification", details.classification)
+    setSrc("poster", details.img);
+    setNodeContent("address", details.address);
     setNodeContent("status", details.status);
     setNodeContent("phone", details.phone);
 }
@@ -22,21 +31,39 @@ async function init () {
 async function update () {
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get('id');
+    
+    const name = getValue("name");
+    const detail = getValue("detail");
+    const status = getValue("status");
+    const price = getValue("price");
+    const phone = getValue("phone");
+    const classification = getValue("classification");
+    const address = getValue("address");
+    const img = getValue('img');
+    
 
-    const response = await fetch('/api/product/' + id, {
-        method: "PUT",
+    let res = await fetch('/api/product/update', {
+        method: "POST",
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({})
+        body: JSON.stringify({
+            item_id: Number(id),
+            name,
+            detail,
+            status,
+            price,
+            phone,
+            classification,
+            address,
+            img
+        })
     });
-
-    if (!response.ok) {
-        alert("Failed")
-    }
-    const success = (await response.json()).success;
-    if (success) {
-        alert("Success")
+    res = (await res.json());
+    if (res.status === 0) {
+        alert("update successfully!");
+    } else {
+        alert(res.msg)
     }
 
 }
