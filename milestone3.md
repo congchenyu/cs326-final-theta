@@ -29,3 +29,19 @@ structure:
 | address | String | owner's address |
 | user_id | Interger | owner's id |
 | classification | String | product's classification |
+
+Breakdown of the division of labor:
+
+Main Chenyu
+
+Sign In Shiyan,Chenyu
+
+Sign Up Chenyu
+
+Details Shiyan
+
+Post Shiyan
+
+Update Shiyan
+
+Server Chenyu
