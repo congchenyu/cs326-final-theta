@@ -5,30 +5,25 @@ function getValue (id) {
 
 async function signin (event) {
     event.preventDefault();
-    console.log(event)
     const email = getValue("email");
     const password = getValue("password");
 
     const response = await fetch('/api/signin', {
         method: "POST",
         body: JSON.stringify({
-            email,
+            username: email,
             password
         }),
         headers: {
             'Content-Type': 'application/json'
         },
     })
-    if (!response.ok) {
-        alert("Failed");
-        return;
-    }
     res = (await response.json());
-    if (res.success) {
-        let user = res.user;
-        console.log(user);
-        alert("success");
+    if (res.status === 0) {
+        alert('login successfully!');
         window.location.href = "/"
+    } else {
+        alert('login failly!' + res.msg);
     }
 
 
