@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap 4 Website Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <style>
+    body {
+      background-color: rgb(253, 224, 224);
+    }
+  </style>
+</head>
+
+<body onload="init () ">
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #881C1C;">
+    <a class="navbar-brand" href=" ">UMass Second-Hand Trading Platform</a>
+
+    <ul class="navbar-nav mr-auto">
+      <div class="nav-item active">
+        <a class="nav-link" href="/main.html">Home <span class="sr-only">(current)</span></a></div>
+    </ul>
+
+    <div class="nav-item active">
+      <a class="nav-link" href="/signin.html">Sign In</a>
+    </div>
+
+    <div class="nav-item active">
+      <a class="nav-link" href="/signup.html">Sign Up</a>
+    </div>
+
+  </nav>
+  <center>
+    <div class="text contain">
+      <div class="container">
+        <img src="https://image.shutterstock.com/image-photo/chlumcany-czech-republic-march-27-260nw-283167884.jpg"
+          class="img-thumbnail" alt="Cinque Terre" style="width: 5cm;height: 4cm;">
+      </div>
+      <br />
+
+      <div class="form-group has-feedback">
+        Product Name: &nbsp;
+        <input type="name" id="name" placeholder="please enter the product name" size="30">
+        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+
+        <tr>
+          <td>Classify:</td>
+        <tr>
+          <td> <select id="type" name="classify">
+              <option value="book" selected="selected">Book</option>
+              <option value="Electronic Product">Electronic Product</option>
+              <option value="Clothes">Clothes</option>
+              <option value="Furniture">Furniture</option>
+              <option value="other">Other</option>
+
+            </select> </td>
+        </tr>
+      </div>
+
+      <div class="form-group has-feedback">
+        <label style="vertical-align: top;"> Product Details:</label>
+        <textarea id="detail" placeholder="please enter the product details"
+          style="width:400px; height:150px;"></textarea>
+        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+
+      </div>
+      <div class="form-group has-feedback">
+        Image Url:
+        <input id="img" placeholder="please enter the image url" style="width:400px;">
+        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+
+      </div>
+      <div>
+        <tr>
+          <td>Status:</td>
+        <tr>
+          <td> <select id="status" name="classify">
+              <option value="New" selected="selected">New</option>
+              <option value="Almost new ">Almost new</option>
+              <option value="Use several times">Use several times</option>
+              <option value="Use a lot times but still work">Use a lot times but still work</option>
+              <option value="Outmoded">Outmoded</option>
+            </select> </td>
+        </tr>
+      </div>
+      <br />
+      <div class="form-group has-feedback">
+        Price:
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="number" id="price" placeholder="please enter the product price" size="30">
+        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+      </div>
+      <div>
+        <tr>
+          <td>Trading Address:</td> &nbsp;&nbsp;
+
+          <select name="adress">
+            <option value="Dubois Library" selected="selected">Dubois Library</option>
+            <option value="IsernBurg">IsernBurg</option>
+            <option value="Worcestor">Worcestor</option>
+            <option value="Blue Wall">Blue Wall</option>
+            <option value="SouthWest Residential Area Bus Stop">SouthWest Residential Area Bus Stop</option>
+
+          </select>
+      </div>
+      <br />
+
+      <div class="form-group has-feedback">
+        Cellphone Number:
+        <input id="phone" placeholder="please enter your cellphone number " size="40">
+        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+
+      </div>
+
+      <button type="button" onclick="update()" class="btn btn-primary ">
+        Update
+      </button>
+    </div>
+  </center>
+  <script src="update.js"></script>
+</body>
+
+</html>
