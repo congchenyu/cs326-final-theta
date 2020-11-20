@@ -15,3 +15,9 @@
 .card-title{
     font-size: small;
 }
+
+.publish-btn {
+    position: fixed;
+    right: 150px;
+    bottom: 150px;
+}
