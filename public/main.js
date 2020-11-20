@@ -1,8 +1,4 @@
-async function init () {
-    let response = await fetch('/api/products');
-    let data = await response.json();
-    let products = data.data;
-    console.log(products);
+function updateView(products) {
     const node = document.getElementById('products');
     let htmlStr = ""
     products.forEach((element, index) => {
@@ -19,3 +15,45 @@ async function init () {
     });
     node.innerHTML = htmlStr;
 }
+
+async function requestProducts(classification = '') {
+    let response = await fetch(`/api/products?classification=${classification}`);
+    let data = await response.json();
+    let products = data.data;
+    updateView(products);
+}
+
+async function requestProductsByKeyword(keyword = '') {
+    let response = await fetch(`/api/products/search?keyword=${keyword}`);
+    let data = await response.json();
+    let products = data.data;
+    updateView(products);
+} 
+
+
+
+function bindEvents() {
+    const tab = document.getElementById('list-tab');
+    const a_tags = tab.children;
+    for (let i = 0; i < a_tags.length; i ++) {
+        const a = a_tags[i];
+        a.addEventListener('click', (e) => {
+            const target = e.target;
+            requestProducts(target.innerHTML.trim());
+        });
+    }
+
+    const keyword_input = document.getElementById('keyword');
+    const search_btn = document.getElementById('search-btn');
+    search_btn.addEventListener("click", (e) => {
+        const keyword = keyword_input.value;
+        requestProductsByKeyword(keyword);
+    });
+
+}
+
+
+bindEvents()
+
+
+requestProducts('');
