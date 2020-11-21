@@ -197,6 +197,9 @@ app.post("/api/signup/", async (req, res) => {
 
 
 let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
 
 
 app.listen(port, (req, res) => {
