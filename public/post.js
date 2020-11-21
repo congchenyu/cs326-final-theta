@@ -11,7 +11,10 @@ async function create () {
     const classification = getValue("type");
     const address = getValue("address");
     const img = getValue('image');
-    
+    if (!price) {
+        alert("please input the price!");
+        return;
+    }
     let response = await fetch('/api/product/add', {
         method: "POST",
         body: JSON.stringify({
