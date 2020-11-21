@@ -2,14 +2,21 @@
     margin: 10px;
     border: none;
     width: 250px;
-}
 
+}
+.card-img-top {
+    width: 250px;
+    height: 150px;
+}
 .container{
     margin-top: 20px;
 }
 
 #products{
     margin: 0 auto;
+    height: 500px;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .card-title{
