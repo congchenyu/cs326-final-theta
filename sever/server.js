@@ -50,7 +50,7 @@ app.post("/api/product/add", async (req, res) => {
     const token = req.cookies.token;
     const is_exist = await UserModel.isExist(token);
     if (!is_exist) {
-      res.send(Response(1, "non-existent user", {}));
+      res.send(Response(1, "Non-existent user", {}));
       return;
     }
 
@@ -58,9 +58,9 @@ app.post("/api/product/add", async (req, res) => {
     const user_id = await UserModel.getUserIdByToken(token);
     const add_res = await ProductModel.addItem(new_item, user_id);
     if (add_res) {
-      res.send(Response(0, "add new item successfully!", {}));
+      res.send(Response(0, "Product added successfully!", {}));
     } else {
-      res.send(Response(1, "add new item failly!", {}));
+      res.send(Response(1, "Failed to add product", {}));
     }
   } catch (err) {
     res.send(Response(1, err.stack, {}));
@@ -75,15 +75,15 @@ app.post("/api/product/update", async (req, res) => {
     // check access
     const has_access = await ProductModel.hasAccess(item.item_id, token);
     if (!has_access) {
-      res.send( Response(1, 'you have not the access!', {})  );
+      res.send( Response(1, 'You do not have permission to modify this product!', {})  );
       return;
     } 
     // update product info
     const update_res = await ProductModel.editItem(item);
     if (update_res) {
-      res.send( Response(0, 'update product successfully!', {}) );
+      res.send( Response(0, 'Product successfully updated!', {}) );
     } else {
-      res.send( Response(1, 'update product failly!', {}) );
+      res.send( Response(1, 'Failed to update product', {}) );
     }
   } catch(err) {
     res.send(Response(1, err.stack, {}));
@@ -96,7 +96,7 @@ app.post('/api/product/buy', async (req, res) => {
     const token = req.cookies.token;
     const is_exist = await UserModel.isExist(token);
     if (!is_exist) {
-      res.send(Response(1, "non-existent user", {}));
+      res.send(Response(1, "Non-existent user", {}));
       return;
     }
     

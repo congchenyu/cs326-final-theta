@@ -20,7 +20,7 @@ async function signin (event) {
     })
     res = (await response.json());
     if (res.status === 0) {
-        alert('login successfully!');
+        alert('welcome ' + email);
         window.location.href = "/"
     } else {
         alert('login failly!' + res.msg);
