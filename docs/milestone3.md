@@ -9,8 +9,8 @@ structure:
 | --- | --- | --- |
 | id | interger | primary key |
 | username | String | user's account |
-| password | String | user's password |
-| token | String | user's token |
+| salt | String | salt |
+| hash | String | user's hash |
 
 ### product
 explain: store all second-hard products
@@ -29,6 +29,7 @@ structure:
 | address | String | owner's address |
 | user_id | Interger | owner's id |
 | classification | String | product's classification |
+| is_sold_out | Boolean | whether product was sold or not |
 
 Breakdown of the division of labor:
 
