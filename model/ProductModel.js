@@ -1,4 +1,4 @@
-const { execute } = require("../mysql");
+const { execute } = require("../database");
 const UserModel = require("./UserModel");
 
 // get products list by classification, if classification equlas '', it returns all.
@@ -64,7 +64,7 @@ async function editItem(item) {
     where id=${item_id}
   `;
   const res = await execute(sql);
-  if (res && res.affectedRows === 1) {
+  if (res) {
     return true;
   } else {
     return false;
@@ -75,7 +75,7 @@ async function editItem(item) {
 async function deleteItem(id) {
   const sql = `delete from product where id=${id}`;
   const res = await execute(sql);
-  if (res && res.affectedRows === 1) {
+  if (res) {
     return true;
   } else {
     return false;
@@ -101,17 +101,29 @@ async function addItem(item, user_id) {
     ('${img}', '${name}', '${detail}', '${price}', '${phone}', '${status}', '${address}', '${user_id}', '${classification}')`;
 
   const res = await execute(sql);
-  if (res && Number.isInteger(res.insertId)) {
+  if (res) {
     return true;
   } else {
     return false;
+  }
+  
+}
+
+async function isProductWasSold(item_id) {
+  const sql = `select is_sold_out from product where id=${item_id}`;
+  const res = await execute(sql);
+  if (Array.isArray(res) && res.length > 0) {
+    return res[0].is_sold_out === 1;
+  } else {
+    return true;
   }
 }
 
 // buy a product
 async function buyItem(item_id) {
-  const res = await deleteItem(item_id);
-  return res;
+  const sql = `update product set is_sold_out=1 where id=${item_id}`;
+  const res = await execute(sql);
+  return true;
 }
 
 
@@ -123,5 +135,6 @@ module.exports = {
   deleteItem,
   addItem,
   buyItem,
-  getProductsByKeyword
+  getProductsByKeyword,
+  isProductWasSold
 }
