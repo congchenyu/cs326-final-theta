@@ -1,133 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Post</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="post.css" />
+  </head>
 
-<head>
-  <title> Post </title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
-  <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
-  <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="post.css">
-</head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg navbar-dark"
+      style="background-color: #881c1c"
+    >
+      <a class="navbar-brand" href=" ">UMass Second-Hand Trading Platform</a>
 
-<body>
-  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #881C1C;">
-    <a class="navbar-brand" href=" ">UMass Second-Hand Trading Platform</a>
+      <ul class="navbar-nav mr-auto">
+        <div class="nav-item active">
+          <a class="nav-link" href="/main.html"
+            >Home <span class="sr-only">(current)</span></a
+          >
+        </div>
+      </ul>
 
-    <ul class="navbar-nav mr-auto">
       <div class="nav-item active">
-        <a class="nav-link" href="/main.html">Home <span class="sr-only">(current)</span></a></div>
-    </ul>
-
-    <div class="nav-item active">
-      <a class="nav-link" href="/signin.html">Sign In</a>
-    </div>
-
-    <div class="nav-item active">
-      <a class="nav-link" href="/signup.html">Sign Up</a>
-    </div>
-
-  </nav>
-  <center>
-    <div class="text contain">
-      <div class="container">
-        <img src="https://image.shutterstock.com/image-photo/chlumcany-czech-republic-march-27-260nw-283167884.jpg"
-          class="img-thumbnail" alt="Cinque Terre" style="width: 5cm;height: 4cm;">
+        <span class="nav-link" id="user-email"></span>
       </div>
-      <br />
-
-      <div class="form-group has-feedback">
-        Product Name: &nbsp;
-        <input type="name" id="name" placeholder="please enter the product name" size="30">
-        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-
-        <tr>
-          <td>Classify:</td>
-        <tr>
-          <td> <select id="type" name="classify">
-              <option value="book" selected="selected">Book</option>
-              <option value="Electronic Product">Electronic Product</option>
-              <option value="Clothes">Clothes</option>
-              <option value="Furniture">Furniture</option>
-              <option value="other">Other</option>
-
-            </select> </td>
-        </tr>
+  
+      <div class="nav-item active">
+          <a class="nav-link" id="sign-in" href="/signin.html">Sign In</a>
       </div>
-
-      <div class="form-group has-feedback">
-        <label style="vertical-align: top;"> Product Details:</label>
-        <textarea id="detail" placeholder="please enter the product details"
-          style="width:400px; height:150px;"></textarea>
-        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-
+  
+      <div class="nav-item active">
+          <a class="nav-link" id="sign-up" href="/signup.html">Sign Up</a>
       </div>
-      <div class="form-group has-feedback">
-        Image Url:
-        <input id="image" placeholder="please enter the image url" style="width:400px;">
-        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-
+  
+      <div class="nav-item active">
+        <a class="nav-link" id="sign-out" >Sign Out</a>
       </div>
-      <div>
-        <tr>
-          <td>Status:</td>
-        <tr>
-          <td> <select id="status" name="classify">
-              <option value="Status" selected="selected">New</option>
-              <option value="Status ">Almost new</option>
-              <option value="Status">Use several times</option>
-              <option value="Status">Use a lot times but still work</option>
-              <option value="Status">Outmoded</option>
-            </select> </td>
-        </tr>
+    </nav>
+    <center>
+      <div class="text contain">
+        <div class="container">
+          <!-- <img src="" id="img" alt="">
+        <input type="file" id="img-input" name="" > -->
+        </div>
+        <br />
+
+        <div class="form-group has-feedback">
+          Product Name: &nbsp;
+          <input
+            type="name"
+            id="name"
+            placeholder="please enter the product name"
+            size="30"
+          />
+          <span
+            class="glyphicon glyphicon-envelope form-control-feedback"
+          ></span>
+
+          <tr>
+            <td>Classify:</td>
+          </tr>
+
+          <tr>
+            <td>
+              <select id="type" name="classify">
+                <option value="Books" selected="selected">Books</option>
+                <option value="Electronic Product">Electronic Product</option>
+                <option value="Clothes">Clothes</option>
+                <option value="Furniture">Furniture</option>
+                <option value="Other">Other</option>
+              </select>
+            </td>
+          </tr>
+        </div>
+
+        <div class="form-group has-feedback">
+          <label style="vertical-align: top"> Product Details:</label>
+          <textarea
+            id="detail"
+            placeholder="please enter the product details"
+            style="width: 400px; height: 150px"
+          ></textarea>
+          <span
+            class="glyphicon glyphicon-envelope form-control-feedback"
+          ></span>
+        </div>
+        <div class="form-group has-feedback">
+          Image Url:
+          <input
+            id="image"
+            placeholder="please enter the image url"
+            style="width: 400px"
+          />
+          <span
+            class="glyphicon glyphicon-envelope form-control-feedback"
+          ></span>
+        </div>
+        <div>
+          <tr>
+            <td>Status:</td>
+          </tr>
+
+          <tr>
+            <td>
+              <select id="status" name="classify">
+                <option value="Status" selected="selected">New</option>
+                <option value="Status ">Almost new</option>
+                <option value="Status">Use several times</option>
+                <option value="Status">Use a lot times but still work</option>
+                <option value="Status">Outmoded</option>
+              </select>
+            </td>
+          </tr>
+        </div>
+        <br />
+        <div class="form-group has-feedback">
+          Price:
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <input
+            type="number"
+            id="price"
+            placeholder="please enter the product price"
+            size="30"
+          />
+          <span
+            class="glyphicon glyphicon-envelope form-control-feedback"
+          ></span>
+        </div>
+        <div>
+          <tr>
+            <td>Trading Address:</td>
+            &nbsp;&nbsp;
+
+            <select name="address" id="address">
+              <option value="Dubois Library" selected="selected">
+                Du Bois Library
+              </option>
+              <option value="IsernBurg">Isenberg</option>
+              <option value="Worcestor">Worcester</option>
+              <option value="Worcestor">Hampshire</option>
+              <option value="Blue Wall">Blue Wall</option>
+              <option value="SouthWest Residential Area Bus Stop">
+                Franklin
+              </option>
+            </select>
+          </tr>
+        </div>
+
+        <br />
+
+        <div class="form-group has-feedback">
+          Cellphone Number:
+          <input
+            id="phone"
+            placeholder="please enter your cellphone number "
+            size="40"
+          />
+          <span
+            class="glyphicon glyphicon-envelope form-control-feedback"
+          ></span>
+        </div>
+
+        <button type="button" onclick="create()" class="btn btn-primary">
+          Submit
+        </button>
       </div>
-      <br />
-      <div class="form-group has-feedback">
-        Price:
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="number" id="price" placeholder="please enter the product price" size="30">
-        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-      </div>
-      <div>
-        <tr>
-          <td>Trading Address:</td> &nbsp;&nbsp;
-
-<<<<<<< HEAD
-          <select name="adress">
-            <option value="address" selected="selected">Dubois Library</option>
-            <option value="address">IsernBurg</option>
-            <option value="address">Worcestor</option>
-            <option value="address">Blue Wall</option>
-            <option value="address">SouthWest Residential Area Bus Stop</option>
-=======
-          <select name="address" id="address">
-            <option value="Dubois Library" selected="selected">Du Bois Library</option>
-            <option value="IsernBurg">Isenberg</option>
-            <option value="Worcestor">Worcester</option>
-            <option value="Worcestor">Hampshire</option>
-            <option value="Blue Wall">Blue Wall</option>
-            <option value="SouthWest Residential Area Bus Stop">Franklin</option>
->>>>>>> 5aa786ca5bd2ca9bbea52b29e94c3a082ac075b0
-
-          </select>
-      </div>
-      <br />
-
-      <div class="form-group has-feedback">
-        Cellphone Number:
-        <input id="phone" placeholder="please enter your cellphone number " size="40">
-        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-
-      </div>
-
-      <button type="button" onclick="create()" class="btn btn-primary ">
-        Submit
-      </button>
-    </div>
-  </center>
-  <script src="post.js"></script>
-</body>
-
+    </center>
+    <script src="./right-ui.js"></script>
+    <script src="post.js"></script>
+  </body>
 </html>
