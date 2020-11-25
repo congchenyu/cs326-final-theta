@@ -1,5 +1,6 @@
-const UserModel = require("./model/UserModel");
+const UserModule = require("./model/UserModel");
 
-UserModel.getUserToken('222').then(res => {
+
+UserModule.getUserToken('root').then(res => {
   console.log(res)
 })
