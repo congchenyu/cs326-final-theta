@@ -4,35 +4,45 @@ function getValue (id) {
 
 async function create () {
     const name = getValue("name");
-    const type = getValue("type");
     const detail = getValue("detail");
     const status = getValue("status");
     const price = getValue("price");
     const phone = getValue("phone");
-    let response = await fetch('/api/product', {
+    const classification = getValue("type");
+    const address = getValue("address");
+    const img = getValue('image');
+    if (!price) {
+        alert("please input the price!");
+        return;
+    }
+    let response = await fetch('/api/product/add', {
         method: "POST",
         body: JSON.stringify({
             name,
-            type,
             detail,
             status,
             price,
-            phone
+            phone,
+            classification,
+            address,
+            img
         }),
         headers: {
             'Content-Type': 'application/json'
         },
     })
-
-    if (!response.ok) {
-        alert("Failed");
-        return;
-    }
     res = (await response.json());
-    if (res.success) {
-        let product = res.data;
-        console.log(product);
-        alert("success");
+    if (res.status === 0) {
+        alert("publish successfully!");
+        window.location.href = '/';
+    } else {
+        alert(res.msg);
     }
-
 }
+
+// document.getElementById("img-input").addEventListener("input", (e) => {
+//    const file = e.target.files[0];
+//    const img_dom = document.getElementById("img");
+//    const src = URL.createObjectURL(file);
+//    img_dom.src = src;
+// })
