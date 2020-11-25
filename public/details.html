@@ -23,13 +23,20 @@
     </ul>
 
     <div class="nav-item active">
-        <a class="nav-link" href="/signin.html">Sign In</a>
+      <span class="nav-link" id="user-email"></span>
     </div>
 
     <div class="nav-item active">
-        <a class="nav-link" href="/signup.html">Sign Up</a>
+        <a class="nav-link" id="sign-in" href="/signin.html">Sign In</a>
     </div>
 
+    <div class="nav-item active">
+        <a class="nav-link" id="sign-up" href="/signup.html">Sign Up</a>
+    </div>
+
+    <div class="nav-item active">
+      <a class="nav-link" id="sign-out" >Sign Out</a>
+    </div>
 </nav>
 
   <div>Post at May 1st 12:00 pm</div>
@@ -63,8 +70,8 @@
     <br />
     <center>
       <div>
-        <button type="button" onclick="buy()" class="btn btn-primary ">
-          Buy it!
+        <button type="button" id="buy-btn" onclick="buy()" class="btn btn-primary ">
+          Reserve
         </button>
         <button type="button" onclick="update()" class="btn btn-primary ">
           Update
@@ -75,6 +82,7 @@
       </div>
     </center>
   </div>
+  <script src="./right-ui.js"></script>
   <script src="/details.js"></script>
 </body>
 
