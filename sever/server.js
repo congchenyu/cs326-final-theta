@@ -50,7 +50,7 @@ app.post("/api/product/add", async (req, res) => {
     const token = req.cookies.token;
     const is_exist = await UserModel.isExist(token);
     if (!is_exist) {
-      res.send(Response(1, "Non-existent user", {}));
+      res.send(Response(1, "please sign in!", {}));
       return;
     }
 
@@ -58,9 +58,9 @@ app.post("/api/product/add", async (req, res) => {
     const user_id = await UserModel.getUserIdByToken(token);
     const add_res = await ProductModel.addItem(new_item, user_id);
     if (add_res) {
-      res.send(Response(0, "Product added successfully!", {}));
+      res.send(Response(0, "add new item successfully!", {}));
     } else {
-      res.send(Response(1, "Failed to add product", {}));
+      res.send(Response(1, "add new item failly!", {}));
     }
   } catch (err) {
     res.send(Response(1, err.stack, {}));
@@ -75,15 +75,15 @@ app.post("/api/product/update", async (req, res) => {
     // check access
     const has_access = await ProductModel.hasAccess(item.item_id, token);
     if (!has_access) {
-      res.send( Response(1, 'You do not have permission to modify this product!', {})  );
+      res.send( Response(1, 'you have not the access!', {})  );
       return;
     } 
     // update product info
     const update_res = await ProductModel.editItem(item);
     if (update_res) {
-      res.send( Response(0, 'Product successfully updated!', {}) );
+      res.send( Response(0, 'update product successfully!', {}) );
     } else {
-      res.send( Response(1, 'Failed to update product', {}) );
+      res.send( Response(1, 'update product failly!', {}) );
     }
   } catch(err) {
     res.send(Response(1, err.stack, {}));
@@ -96,12 +96,18 @@ app.post('/api/product/buy', async (req, res) => {
     const token = req.cookies.token;
     const is_exist = await UserModel.isExist(token);
     if (!is_exist) {
-      res.send(Response(1, "Non-existent user", {}));
+      res.send(Response(1, "please sign in!", {}));
       return;
     }
     
-    // buy item
+    // check the product is whether exist or not
     const item_id = req.body.item_id;
+    const was_sold = await ProductModel.isProductWasSold(item_id);
+    if (was_sold) {
+      res.send( Response(1, 'the product has been sold out!', {}) );
+      return;
+    }
+    // buy item
     const buy_res = await ProductModel.buyItem(item_id);
     if (buy_res) {
       res.send( Response(0, 'buy successfully!', {}) );
@@ -194,13 +200,33 @@ app.post("/api/signup/", async (req, res) => {
   }
 });
 
+app.get('/api/signout', async (req, res) => {
+  res.cookie("token", '', { maxAge: 1000 * 60 * 60 * 24, httpOnly: true });
+  res.send(Response(0, "sign out successfully!", {}));
+});
+
+app.get('/api/user-info', async (req, res) => {
+  try {
+    const token = req.cookies.token;
+    const is_exist = await UserModel.isExist(token);
+    if (!is_exist) {
+      res.send(Response(1, "please sign in!", {}));
+      return;
+    }
+    const username = await UserModel.getUserName(token);
+    res.send(Response(0, "ok", {
+      username
+    }));
+  } catch(err) {
+    res.send(Response(1, err.stack, {}));
+  }
+});
 
 
 let port = process.env.PORT;
 if (port == null || port == "") {
   port = 3000;
 }
-
 
 app.listen(port, (req, res) => {
   console.log("Server is running successfullly!");
