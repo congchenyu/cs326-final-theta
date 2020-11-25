@@ -21,6 +21,7 @@ async function signup (event) {
     res = (await response.json());
     if (res.status === 0) {
         alert('register successfully!');
+        window.location.href = '/signin.html';
     } else {
         alert(res.msg);
     }
