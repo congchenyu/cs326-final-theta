@@ -22,18 +22,26 @@
     </ul>
 
     <div class="nav-item active">
-      <a class="nav-link" href="/signin.html">Sign In</a>
+      <span class="nav-link" id="user-email"></span>
     </div>
 
     <div class="nav-item active">
-      <a class="nav-link" href="/signup.html">Sign Up</a>
+        <a class="nav-link" id="sign-in" href="/signin.html">Sign In</a>
+    </div>
+
+    <div class="nav-item active">
+        <a class="nav-link" id="sign-up" href="/signup.html">Sign Up</a>
+    </div>
+
+    <div class="nav-item active">
+      <a class="nav-link" id="sign-out" >Sign Out</a>
     </div>
 
   </nav>
   <center>
     <div class="text contain">
       <div class="container">
-        <img src="https://image.shutterstock.com/image-photo/chlumcany-czech-republic-march-27-260nw-283167884.jpg"
+        <img id="poster"
           class="img-thumbnail" alt="Cinque Terre" style="width: 5cm;height: 4cm;">
       </div>
       <br />
@@ -46,12 +54,12 @@
         <tr>
           <td>Classify:</td>
         <tr>
-          <td> <select id="type" name="classify">
-              <option value="book" selected="selected">Book</option>
+          <td> <select id="classification" name="classification">
+              <option value="Books" selected="selected">Books</option>
               <option value="Electronic Product">Electronic Product</option>
               <option value="Clothes">Clothes</option>
               <option value="Furniture">Furniture</option>
-              <option value="other">Other</option>
+              <option value="Other">Other</option>
 
             </select> </td>
         </tr>
@@ -94,18 +102,11 @@
         <tr>
           <td>Trading Address:</td> &nbsp;&nbsp;
 
-<<<<<<< HEAD
-          <select name="adress">
-            <option value="Dubois Library" selected="selected">Dubois Library</option>
-            <option value="IsernBurg">IsernBurg</option>
-            <option value="Worcestor">Worcestor</option>
-=======
           <select name="address" id="address">
             <option value="Dubois Library" selected="selected">Du Bois Library</option>
             <option value="IsernBurg">Isenberg</option>
             <option value="Worcestor">Worcester</option>
             <option value="Worcestor">Hampshire</option>
->>>>>>> 5aa786ca5bd2ca9bbea52b29e94c3a082ac075b0
             <option value="Blue Wall">Blue Wall</option>
             <option value="SouthWest Residential Area Bus Stop">Franklin</option>
 
@@ -125,6 +126,7 @@
       </button>
     </div>
   </center>
+  <script src="./right-ui.js"></script>
   <script src="update.js"></script>
 </body>
 
