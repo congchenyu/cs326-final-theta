@@ -46,26 +46,18 @@ Update page allows the product owner to update the product information.
 
 ### APIs
 
+| API | Description |
+| --- | --- |
 | /api/products | which gets a product classification |
-
 | /api/products/search | which searches products by keyword|
-
 | /api/product/:id | which gets a product id |
-
 | /api/product/add | which adds a new product |
-
 | /api/product/update | which lets a product owner to update a product |
-
 | /api/product/buy | which allows a user to reserve(buy) a product |
-
 | /api/product/delete | which allows a product owner to delete the product |
-
 | /api/signup | which allows for a new user to sign up |
-
 | /api/ signin | which allows a user to sign in |
-
 | /api/signout | which allows a signed user to sign out |
-
 | /api/user-info | which shows the user's email on the main page |
 
 ### Database Tables
@@ -101,9 +93,12 @@ Structure:
 | classification | String | product's classification |
 
 ### URL Routes/Mappings
+
+| URL Routes | Description | Special Permissions |
+| --- | --- | --- |
 | Sign In | switch to the sign in page | only the right password and email can be signed in |
 | Do not have an account? Sign Up | switch to the sign up page |
-| Sign Up | switch to the sign up page | The email which have signed before can not be signed again |
+| Sign Up | switch to the sign up page | the email which have signed before can not be signed again |
 | Have an account? | switch to the sign in page |
 | Sign Out | sign out an account |
 | Home | switch to the main page |
@@ -120,8 +115,11 @@ Structure:
 | Product Details | show a product details |
 
 ### Authentication/Authorization
+
+| Name | Description | Special Permissions |
+| --- | --- | --- |
 | Sign In | switch to the sign in page | only the right password and email can be signed in | If is not accessible : pop up alret |
-| Sign Up | switch to the sign up page | The email which have signed before can not be signed again | If is not accessible : pop up alret |
+| Sign Up | switch to the sign up page | the email which have signed before can not be signed again | If is not accessible : pop up alret |
 | Reserve | reserve a product | need to sign in first | If is not accessible : pop up alret |
 | Update | update a product | only the product owner can do this | If is not accessible : pop up alret |
 | Sold Out | delete a product | only the product owner can do this | If is not accessible : pop up alret |
