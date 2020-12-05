@@ -46,6 +46,8 @@ Update page allows the product owner to update the product information.
 
 ### APIs
 
+| API | Description |
+
 | --- | --- |
 
 | /api/products | which gets a product classification |
@@ -103,6 +105,9 @@ Structure:
 | classification | String | product's classification |
 
 ### URL Routes/Mappings
+
+| URL Routes | Description | Special Permissions |
+| --- | --- | --- |
 | Sign In | switch to the sign in page | only the right password and email can be signed in |
 | Do not have an account? Sign Up | switch to the sign up page |
 | Sign Up | switch to the sign up page | The email which have signed before can not be signed again |
@@ -122,6 +127,8 @@ Structure:
 | Product Details | show a product details |
 
 ### Authentication/Authorization
+| Name | Description | Special Permissions |
+| --- | --- | --- |
 | Sign In | switch to the sign in page | only the right password and email can be signed in | If is not accessible : pop up alret |
 | Sign Up | switch to the sign up page | The email which have signed before can not be signed again | If is not accessible : pop up alret |
 | Reserve | reserve a product | need to sign in first | If is not accessible : pop up alret |
