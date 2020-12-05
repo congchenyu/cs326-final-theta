@@ -29,20 +29,34 @@ GitHub username: shiy-cloud
 #### Main Page 
 Main page displays all the products sold on this website, and indicates whether a product is reserved. A customer also can click on a product to see its details. The customer can search the keyword of a product he/she wants. A customer can also search products by types. A signed customer can sign in and sign out using the link here. A new customer can sign up using the link here.
 
+![image](https://github.com/congchenyu/cs326-final-theta/blob/main/docs/Main.png)
+
+![image](https://github.com/congchenyu/cs326-final-theta/blob/main/docs/Main-signed.png)
+
 #### Sign In Page
 Sign In page allows a registered customer to sign in and enter the main page automatically. If a customer does not have an account, he/she can click the link to sign up.
+
+![image](https://github.com/congchenyu/cs326-final-theta/blob/main/docs/Sign%20In.png)
 
 #### Sign Up Page 
 Sign Up page allows a new user to sign up their account. The email which have signed before can not be signed again. If a customer already has an account, he/she can click the link to sign in.
 
+![image](https://github.com/congchenyu/cs326-final-theta/blob/main/docs/Sign%20Up.png)
+
 #### Details Page 
 Detail page shows customers product details. If a customer wants to buy the product, he/she can click the reserve button to reserve it. If a product owner sold the product out, he/she can click the sold out button to delete the product. If the owner wants to update the information of a product, he/she can click the update button which allows them to do so.
+
+![image](https://github.com/congchenyu/cs326-final-theta/blob/main/docs/Details.png)
 
 #### Post Page 
 Post page allows a signed user to post the product which they want to sell with information and pictures.
 
+![image](https://github.com/congchenyu/cs326-final-theta/blob/main/docs/Post.png)
+
 #### Update Page
 Update page allows the product owner to update the product information.
+
+![image](https://github.com/congchenyu/cs326-final-theta/blob/main/docs/Update.png)
 
 ### APIs
 
