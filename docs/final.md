@@ -155,3 +155,7 @@ Update Shiyan
 Server Chenyu, Shiyan
 
 Video Shiyan, Chenyu
+
+### Conclusion
+
+In the process of completing the project, we encountered many difficulties. For example, our team members were reduced by one person, so we just have two people to complete an entire project, which makes us spend a lot of time on the project every day, and the back-end courses are very difficult. Some problems take me a long time to understand. At the same time, because of the arrival of winter time and the difference in time zone, the course time is late at night in Beijing time. It is difficult to keep a clear head during this time, etc.. But The process is also very happy. We really enjoy the feeling of designing web pages. Overcoming a bug will also make us very happy. Creating a web page designed by ourselves also gives us a sense of accomplishment. It also gives us a lot of programming experience. Let us make the webpage more smooth in the future. In the future, we may ask some friends who understand network security and network operation to maintain and protect this website. After everything is done, we may conduct propaganda, let everyone start using this website and give us some opinions.
