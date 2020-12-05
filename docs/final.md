@@ -46,6 +46,8 @@ Update page allows the product owner to update the product information.
 
 ### APIs
 
+| --- | --- |
+
 | /api/products | which gets a product classification |
 
 | /api/products/search | which searches products by keyword|
